@@ -1,6 +1,8 @@
 #include "math_lib.h"
 #include <cmath>
 #include <algorithm>
+#include <gtest/gtest.h>
+#include "math_lib.h"
 
 namespace MathLib
 {
@@ -42,5 +44,16 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+    int gcd(int a, int b) {
+        a = std::abs(a);
+        b = std::abs(b);
+        while (b! = 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+    return a;
+    }
 }
 

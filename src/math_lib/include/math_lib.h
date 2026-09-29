@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdexcept>
+#include <cstdlib>
 
 namespace MathLib
 {	
@@ -69,4 +70,7 @@ namespace MathLib
 
     // Function to search GCD
     int GCD(int a, int b);
+
+    // Function to calculation of the greatest common division
+    int gcd(int a, int b)
 }

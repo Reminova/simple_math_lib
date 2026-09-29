@@ -77,3 +77,11 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+
+    TEST(MathLibTest, GCDTest) {
+        EXPECT_EQ(gcd(54, 24), 6);
+        EXPECT_EQ(gcd(48, 18), 6);
+        EXPECT_EQ(gcd(101, 10), 1);
+        EXPECT_EQ(gcd(-48, 18), 6);
+        EXPECT_EQ(gcd(0, 5), 5);
+    }
