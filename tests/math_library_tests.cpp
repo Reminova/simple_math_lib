@@ -1,6 +1,7 @@
 #define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING
 #include <gtest/gtest.h>
 #include <fstream>
+#include <stdexcept>
 #include "math_lib.h"
 
 class MathLibTestFixture : public ::testing::Test
@@ -76,4 +77,12 @@ TEST_F(MathLibTestFixture, IsPrimeTest)
 TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
+}
+
+TEST_F(MathLibTestFixture, ThirdAngleTest)
+{
+    EXPECT_TRUE(MathLib::isEqual(MathLib::thirdAngle(60.0, 60.0), 60.0));
+    EXPECT_TRUE(MathLib::isEqual(MathLib::thirdAngle(30.0, 90.0), 60.0));
+    EXPECT_THROW(MathLib::thirdAngle(90.0, 90.0), std::invalid_argument);
+    EXPECT_THROW(MathLib::thirdAngle(0.0, 50.0), std::invalid_argument);
 }

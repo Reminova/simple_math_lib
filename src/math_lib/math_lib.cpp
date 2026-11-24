@@ -1,6 +1,7 @@
 #include "math_lib.h"
 #include <cmath>
 #include <algorithm>
+#include <stdexcept>
 
 namespace MathLib
 {
@@ -39,8 +40,16 @@ namespace MathLib
 
     int GCD(int a, int b)
     {
-		if (b == 0) return a;
-		return GCD(b, a % b);
-	}
-}
+        if (b == 0) return a;
+        return GCD(b, a % b);
+    }
 
+    double thirdAngle(double a, double b)
+    {
+        if (a <= 0.0 || b <= 0.0 || (a + b) >= 180.0)
+        {
+            throw std::invalid_argument("Invalid triangle angles.");
+        }
+        return 180.0 - a - b;
+    }
+}

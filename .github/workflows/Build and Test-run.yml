@@ -52,7 +52,8 @@ jobs:
           cmake -B ${{ github.workspace }}/build \
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
             -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} \
-            -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
+            -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} \
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
       - name: Build
         shell: bash
